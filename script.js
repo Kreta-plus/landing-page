@@ -1,3 +1,42 @@
+// ---------- Android letöltés ----------
+// A webes változat még fejlesztés alatt áll, ezért a gombok az Android APK-t töltik le. A legújabb verziót az app repójának
+// updates/latest.json leírója adja meg (ugyanezt nézi az app beépített frissítője is). Először az új Fecnify repót nézzük;
+// amíg az nem érhető el, a régi ZsírKréta repót, ahol a „successor” mező a Fecnify APK-ra mutat. Ha egyik sem megy,
+// a HTML-ben lévő 3.0-s link marad.
+const REPOS = ["Kreta-plus/FecnifyAndroidApp", "Kreta-plus/ZsirKretaAndroidApp"];
+const HU_MONTHS = ["január", "február", "március", "április", "május", "június", "július", "augusztus", "szeptember", "október", "november", "december"];
+const ANDROID = { 21: "5.0", 23: "6.0", 24: "7.0", 26: "8.0", 28: "9", 29: "10", 30: "11", 31: "12", 33: "13", 34: "14", 35: "15" };
+const huDate = (s) => { const [y, m, d] = String(s).split("-").map(Number); return y && m && d ? `${y}. ${HU_MONTHS[m - 1]} ${d}.` : ""; };
+const mb = (b) => `${(b / 1048576).toFixed(1).replace(".", ",")} MB`;
+const setText = (sel, text) => text && document.querySelectorAll(sel).forEach((el) => (el.textContent = text));
+const updatesBase = (repo) => `https://raw.githubusercontent.com/${repo}/main/updates/`;
+
+const loadManifest = (i = 0) =>
+  i >= REPOS.length
+    ? Promise.reject("nincs elérhető leíró")
+    : fetch(updatesBase(REPOS[i]) + "latest.json", { cache: "no-cache" })
+        .then((r) => (r.ok ? r.json() : Promise.reject(r.status)))
+        .then((m) => ({ repo: REPOS[i], m: m.successor || m }))
+        .catch(() => loadManifest(i + 1));
+
+loadManifest()
+  .then(({ repo, m }) => {
+    if (!/^[\w.-]+\.apk$/.test(m.apk || "")) return; // csak sima fájlnevet fogadunk el
+    const url = updatesBase(repo) + encodeURIComponent(m.apk);
+    document.querySelectorAll("[data-apk]").forEach((a) => (a.href = url));
+    document.querySelectorAll("[data-repo]").forEach((a) => (a.href = `https://github.com/${repo}`));
+    const android = ANDROID[m.minSdk];
+    setText("[data-apk-meta]", [m.versionName && `Verzió: ${m.versionName}`, m.size > 0 && mb(m.size), android && `Android ${android} vagy újabb`].filter(Boolean).join(" · "));
+    setText("[data-apk-version]", m.versionName);
+    setText("[data-apk-date]", huDate(m.date));
+    setText("[data-apk-sha]", m.sha256);
+    const notes = document.querySelector("[data-apk-notes]");
+    if (notes && Array.isArray(m.notes) && m.notes.length) {
+      notes.replaceChildren(...m.notes.map((t) => Object.assign(document.createElement("li"), { textContent: String(t) })));
+    }
+  })
+  .catch(() => {}); // marad a beépített (3.0-s) link és leírás
+
 // ---------- jegyszámoló (ugyanaz a logika, mint az app „hány 5-ös kell” részében, súlyok nélkül) ----------
 const NAMES = { 1: "Egyes", 2: "Kettes", 3: "Hármas", 4: "Négyes", 5: "Ötös" };
 const GOAL = {
