@@ -5,12 +5,12 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
   <meta name="theme-color" content="#221a15">
   <title>ZsírKréta – a KRÉTA-d, átláthatóan</title>
-  <meta name="description" content="ZsírKréta: jegyek, órarend, házi és statisztikák egy helyen, a saját neveiddel és színeiddel. Nem hivatalos KRÉTA-kliens diákoknak: töltsd le Androidra, a webes változat fejlesztés alatt áll.">
+  <meta name="description" content="ZsírKréta: jegyek, órarend, házi és statisztikák egy helyen, a saját neveiddel és színeiddel. Nem hivatalos KRÉTA-kliens diákoknak. Az alkalmazást most átalakítjuk, ezért a letöltés szünetel.">
   <link rel="icon" href="img/logo.svg" type="image/svg+xml">
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <!-- a data-apk linkek a legújabb APK-ra mutatnak: a script.js a GitHubról olvassa ki, melyik az; ha nem sikerül, a 2.5-ös marad -->
+  <!-- az APK letöltése ki van kapcsolva, amíg az alkalmazást átalakítjuk -->
   <header class="top">
     <a class="brand" href="#"><img src="img/logo.svg" alt="" width="36" height="36">ZsírKréta</a>
     <nav class="top-nav" aria-label="Oldal">
@@ -19,21 +19,21 @@
       <a href="#kinezet">Kinézet</a>
       <a href="#gyik">Kérdések</a>
     </nav>
-    <a class="btn small" href="#letoltes">Letöltés</a>
+    <a class="btn small" href="#letoltes">Állapot</a>
   </header>
 
   <main>
     <!-- ---------- hős ---------- -->
     <section class="hero">
       <div class="hero-text">
-        <p class="status"><span class="status-dot" aria-hidden="true"></span>A webes változat még készül, Androidra már letölthető.</p>
+        <p class="status"><span class="status-dot" aria-hidden="true"></span>Átalakítjuk az alkalmazást, addig a letöltés szünetel.</p>
         <h1>A KRÉTA-d, végre átláthatóan.</h1>
         <p class="lead">Jegyek, órarend, házi és hiányzások egy helyen. Látod, hány ötös kell még, átnevezheted a tanáraidat, és olyan színű lesz, amilyet szeretnél.</p>
         <div class="cta">
-          <a class="btn" href="https://raw.githubusercontent.com/Kreta-plus/ZsirKretaAndroidApp/main/updates/ZsirKreta-2.5.apk" data-apk><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4v11m0 0-5-5m5 5 5-5M5 20h14" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg>Letöltés Androidra</a>
-          <a class="btn ghost" href="#letoltes">Hogyan telepítsem?</a>
+          <span class="btn off" aria-disabled="true"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4v11m0 0-5-5m5 5 5-5M5 20h14" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg>Letöltés szünetel</span>
+          <a class="btn ghost" href="#letoltes">Miért?</a>
         </div>
-        <p class="fine" data-apk-meta>Verzió: 2.5 · 9,3 MB · Android 8.0 vagy újabb</p>
+        <p class="fine">Ha elkészült az új változat, a <a href="https://discord.gg/ufyyQUxnKG" target="_blank" rel="noopener noreferrer">Discordon</a> szólunk.</p>
       </div>
 
       <div class="hero-stage" aria-hidden="true">
@@ -78,31 +78,16 @@
     <!-- ---------- letöltés ---------- -->
     <section class="dl" id="letoltes">
       <div class="dl-main">
-        <h2>Töltsd le Androidra.</h2>
-        <p class="dl-lead">Az Android alkalmazás ingyenes, és mindent tud, amit ezen az oldalon látsz. Nem a Play Áruházból jön, hanem közvetlenül tőlünk, a GitHubról.</p>
-        <a class="btn big" href="https://raw.githubusercontent.com/Kreta-plus/ZsirKretaAndroidApp/main/updates/ZsirKreta-2.5.apk" data-apk><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4v11m0 0-5-5m5 5 5-5M5 20h14" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg>Letöltés (APK)</a>
-        <p class="fine" data-apk-meta>Verzió: 2.5 · 9,3 MB · Android 8.0 vagy újabb</p>
-        <ol class="dl-steps">
-          <li><div><b>Töltsd le</b> az APK fájlt a fenti gombbal, lehetőleg rögtön a telefonodon.</div></li>
-          <li><div><b>Nyisd meg</b> a letöltött fájlt. Ha a telefon kéri, engedélyezd a böngésződnek az „ismeretlen alkalmazások telepítését”.</div></li>
-          <li><div><b>Telepítsd,</b> és lépj be a KRÉTA-fiókoddal. Az új verziókat az app magától jelzi, nem kell ide visszajönnöd.</div></li>
-        </ol>
-        <p class="fine">Csak Androidra (8.0 vagy újabb), iPhone-ra egyelőre nincs. A korábbi verziók a <a href="https://github.com/Kreta-plus/ZsirKretaAndroidApp" target="_blank" rel="noopener noreferrer">GitHubon</a> vannak.</p>
+        <h2>A letöltés most szünetel.</h2>
+        <p class="dl-lead">Az egész alkalmazást átalakítjuk, ezért az Android változat egyelőre nem tölthető le. Ha már telepítetted, addig is használhatod tovább.</p>
+        <span class="btn big off" aria-disabled="true"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4v11m0 0-5-5m5 5 5-5M5 20h14" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg>Letöltés szünetel</span>
+        <p class="fine">Amint elkészül az új változat, újra letölthető lesz innen. Hogy mikor, arról a <a href="https://discord.gg/ufyyQUxnKG" target="_blank" rel="noopener noreferrer">Discord-szerverünkön</a> szólunk.</p>
       </div>
 
       <aside class="dl-side">
-        <div class="dl-card">
-          <h3>A <span data-apk-version>2.5</span> verzió újdonságai</h3>
-          <p class="dl-date" data-apk-date>2026. november 5.</p>
-          <ul data-apk-notes>
-            <li>Új: a belépés akkor is megmarad, ha napokig nem nyitod meg az appot (a háttérben naponta kétszer megújítja a KRÉTA-belépést)</li>
-            <li>Javítva: a KRÉTA átmeneti hibáinál (szerverhiba, karbantartás) az app nem léptet ki, hanem később újrapróbálja</li>
-            <li>Új: automatikus hibajelentés, hogy a hibákat gyorsabban javíthassuk</li>
-          </ul>
-        </div>
         <div class="dl-card wip">
-          <h3>🚧 A webes alkalmazás még készül</h3>
-          <p>A böngészős változaton még dolgozunk, ezért most nem lehet megnyitni. Amíg elkészül, használd az Android appot. Ha szeretnéd tudni, mikor indul, gyere a <a href="https://discord.gg/ufyyQUxnKG" target="_blank" rel="noopener noreferrer">Discord-szerverünkre</a>.</p>
+          <h3>🚧 Átalakítás alatt</h3>
+          <p>Az Android appon és a böngészős változaton is dolgozunk, ezért most egyiket sem lehet letölteni vagy megnyitni. Ha szeretnéd tudni, mikor indul, gyere a <a href="https://discord.gg/ufyyQUxnKG" target="_blank" rel="noopener noreferrer">Discord-szerverünkre</a>.</p>
         </div>
       </aside>
     </section>
@@ -121,7 +106,7 @@
         <li><span class="dot o">🎒</span><div><h3>Táska</h3><p>Megadod, mit kell vinni az egyes órákra, és este kiírja, mi kerüljön a táskába holnapra.</p></div></li>
         <li><span class="dot y">🏷️</span><div><h3>Saját nevek</h3><p>A „Magyar nyelv és irodalom” lehet egyszerűen „Irodalom”, a tanáraid pedig azon a néven szerepelnek, ahogy te hívod őket.</p></div></li>
         <li><span class="dot s">📸</span><div><h3>Story kép</h3><p>Egy gombnyomásra kész kép az átlagodról és a legjobb eredményeidről, Instagramra méretezve.</p></div></li>
-        <li><span class="dot g">🤖</span><div><h3>Androidon már most</h3><p>A natív Android alkalmazás már letölthető. A böngészős változat, ami gépen és iPhone-on is megy majd, fejlesztés alatt áll.</p></div></li>
+        <li><span class="dot g">🤖</span><div><h3>Androidon és böngészőben</h3><p>Az alkalmazást most átalakítjuk: készül az új Android app és a böngészős változat, ami gépen és iPhone-on is megy majd.</p></div></li>
       </ul>
     </section>
 
@@ -234,12 +219,8 @@
     <section class="faq" id="gyik">
       <h2>Kérdések</h2>
       <details>
-        <summary>Mikor lesz kész a webes változat?</summary>
-        <p>Még dolgozunk rajta, ezért most nem lehet megnyitni. Addig az Android app tudja ugyanezt. Amikor elindul, a <a href="https://discord.gg/ufyyQUxnKG" target="_blank" rel="noopener noreferrer">Discord-szerverünkön</a> szólunk.</p>
-      </details>
-      <details>
-        <summary>Miért nem a Play Áruházból kell letölteni? Biztonságos?</summary>
-        <p>Az appot közvetlenül a <a href="https://github.com/Kreta-plus/ZsirKretaAndroidApp" target="_blank" rel="noopener noreferrer">GitHubról</a> adjuk ki, ezért a telefon rákérdez, hogy engedélyezed-e a telepítést, és a Play Protect is figyelmeztethet. Ez minden Play Áruházon kívüli appnál így van. Ha biztosra mennél, a letöltött fájl SHA-256 összegét összevetheted a fent látható értékkel. Az új verziókat az app maga tölti le és ellenőrzi.</p>
+        <summary>Miért nem lehet most letölteni?</summary>
+        <p>Az egész alkalmazást átalakítjuk, és amíg ez tart, nem adunk ki új telepítőt. Ha már fent van a telefonodon, használhatod tovább. Amikor az új változat elkészül, a <a href="https://discord.gg/ufyyQUxnKG" target="_blank" rel="noopener noreferrer">Discord-szerverünkön</a> szólunk.</p>
       </details>
       <details>
         <summary>Ez a hivatalos KRÉTA?</summary>
@@ -265,9 +246,9 @@
 
     <section class="last">
       <img src="img/logo.svg" alt="" width="72" height="72">
-      <h2>Nézz bele egy perc alatt.</h2>
-      <a class="btn" href="https://raw.githubusercontent.com/Kreta-plus/ZsirKretaAndroidApp/main/updates/ZsirKreta-2.5.apk" data-apk><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4v11m0 0-5-5m5 5 5-5M5 20h14" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg>Letöltés Androidra</a>
-      <p class="fine">A webes változat hamarosan érkezik.</p>
+      <h2>Hamarosan jövünk.</h2>
+      <span class="btn off" aria-disabled="true"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4v11m0 0-5-5m5 5 5-5M5 20h14" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg>Letöltés szünetel</span>
+      <p class="fine">Átalakítjuk az alkalmazást, hamarosan újra letölthető lesz.</p>
     </section>
   </main>
 

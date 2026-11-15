@@ -53,6 +53,8 @@ h2 { font-size: clamp(2rem, 4.4vw, 3.1rem); max-width: 18ch; }
 .btn.small { min-height: 40px; padding: 0 18px; font-size: .9rem; }
 .btn.big { min-height: 60px; padding: 0 32px; font-size: 1.1rem; }
 .btn svg { width: 20px; height: 20px; margin-right: 10px; flex: none; }
+.btn.off { background: var(--wood-2); color: var(--dust); cursor: not-allowed; }
+.btn.off:hover { transform: none; }
 
 /* ---------- fejléc ---------- */
 .top {
