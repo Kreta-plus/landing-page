@@ -1,11 +1,11 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
-  <!-- ZsírKréta: kiemelősárga lap, rajta egy rózsaszín zsírkréta, ami egy „Z”-t rajzol -->
+  <!-- Fecnify: kiemelősárga lap, rajta egy kitépett fecni szamárfüllel, „F” betűvel és rózsaszín kiemeléssel -->
   <rect width="64" height="64" rx="16" fill="#ffe14d"/>
-  <path d="M11 21.5c6-.8 12-1 18.5-.5L11.5 43.5c6.5-.9 13-1 19.5-.5" fill="none" stroke="#1d1510" stroke-width="5.5" stroke-linecap="round" stroke-linejoin="round"/>
-  <g transform="translate(32.5 42) rotate(45)">
-    <path d="M-2 0h4l4-8h-12z" fill="#b8175f"/>
-    <rect x="-6" y="-31" width="12" height="23.5" rx="2" fill="#e0307e"/>
-    <rect x="-6" y="-25" width="12" height="13" fill="#1d1510"/>
-    <rect x="-6" y="-20" width="12" height="3" fill="#ffe14d"/>
+  <g transform="rotate(-8 32 32)">
+    <path d="M16 13H44L51 20V51l-3.5 2.5-3.5-2.5-3.5 2.5-3.5-2.5-3.5 2.5-3.5-2.5-3.5 2.5-3.5-2.5-3.5 2.5-3.5-2.5Z" fill="#1d1510" opacity=".22" transform="translate(1.5 2)"/>
+    <path d="M16 13H44L51 20V51l-3.5 2.5-3.5-2.5-3.5 2.5-3.5-2.5-3.5 2.5-3.5-2.5-3.5 2.5-3.5-2.5-3.5 2.5-3.5-2.5Z" fill="#f6efe6"/>
+    <path d="M44 13v7h7z" fill="#d9c9b6"/>
+    <rect x="21" y="34" width="25" height="7.5" rx="2.5" fill="#ff5fa2"/>
+    <path d="M25 43V22h14M25 32h10" fill="none" stroke="#1d1510" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>
   </g>
 </svg>
